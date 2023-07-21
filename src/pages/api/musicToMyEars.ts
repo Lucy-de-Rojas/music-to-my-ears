@@ -1,8 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-
+// to get file from the front:
 import {IncomingForm} from 'formidable';
 
+
+
+// import readTheFile helper:
+import { readTheFile} from '../../../src/utils/readFile';
 
 
 
@@ -48,11 +52,23 @@ export default async function handler(
 
   console.clear()
 
-  console.log('back end 🟥')
+  console.log('back end!')
 
   let result:any = await asyncParse(req);
   let outcome = result.files.file[0];
-  console.log('result:', outcome.newFilename, outcome.originalFilename)
+  console.log('result:', outcome, outcome.newFilename, outcome.originalFilename, typeof outcome.newFilename);
+
+
+
+
+
+
+
+  // paring the file 🟥🟥🟥🟥🟥:
+  // readTheFile(outcome.newFilename);
+
+
+
 
 
 
