@@ -45,9 +45,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <h1>Draggie & Droppie</h1>
+      <main className={styles.main}>
 
+
+<div className={styles.wrapper}>
+
+
+      <p className={styles.header}>WAV FILE x-TRACTOR</p>
 
       {/* container */}
         <form className={styles.container}
@@ -58,19 +62,17 @@ export default function Home() {
             >
 
 
-              drop here
+              <p>Drag File </p>
 
 
         <input type="file"  hidden
         />
-        {/* <label htmlFor="uploadButton" className={styles.label}>Upload here</label> */}
-
-
 
 
 
 
         </form>
+        </div>
       </main>
     </>
   )

@@ -15,14 +15,8 @@ export function handleDragOver(event:DragEvent) {
         // styling:
         let container = (document.querySelector('.Home_container__tlJEC') as HTMLElement);
 
-        container.style.backgroundColor = 'red';
-
-        container.innerHTML = 'entered';
-        container.style.width = '70%';
-        container.style.padding = '5.12em 1.87em'
-
-
-
+        container.style.backgroundColor = '#222633';
+        container.innerHTML = 'Drop file now';
 
 
         console.log('drag entereded!');

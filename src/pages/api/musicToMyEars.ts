@@ -1,7 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 // to get file from the front:
-import {IncomingForm} from 'formidable';
+import formidable, {IncomingForm} from 'formidable';
+
+
+const fs = require('fs')
+const path = require('path')
+
 
 
 
@@ -37,6 +42,16 @@ const asyncParse = (req:NextApiRequest) =>
       // console.log('inside parser!');
       resolve({ fields, files });
     });
+
+
+
+
+    // 🟥🟥🟥🟥
+    form.on('file', (name:string,file:formidable.File) => {
+      console.log('we have a file🟥🟥🟥', file)
+      readTheFile(file);
+
+    })
   });
 
 
@@ -55,8 +70,8 @@ export default async function handler(
   console.log('back end!')
 
   let result:any = await asyncParse(req);
-  let outcome = result.files.file[0];
-  console.log('result:', outcome, outcome.newFilename, outcome.originalFilename, typeof outcome.newFilename);
+  let outcome = await result.files.file[0];
+  // console.log('result:', outcome, outcome.newFilename, outcome.originalFilename, typeof outcome.originalFilename);
 
 
 
@@ -64,8 +79,8 @@ export default async function handler(
 
 
 
-  // paring the file 🟥🟥🟥🟥🟥:
-  // readTheFile(outcome.newFilename);
+  // parsing the file 🟥🟥🟥🟥🟥:
+  // await readTheFile(outcome.newFilename);
 
 
 

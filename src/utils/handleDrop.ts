@@ -1,4 +1,5 @@
 import {DragEvent} from 'react';
+// import { setTimeout } from 'timers/promises';
 
 
 export async function handleDrop(event:DragEvent) {
@@ -16,10 +17,9 @@ export async function handleDrop(event:DragEvent) {
         // styling:
         let container = (document.querySelector('.Home_container__tlJEC') as HTMLElement);
 
-        container.style.backgroundColor = 'white'
-        container.innerHTML = 'dropped!';
-        container.style.width = '60%';
-        container.style.padding = '3.12em 1.87em'
+        container.style.backgroundColor = '#111420'
+        container.innerHTML = 'Drag File';
+
 
 
 
